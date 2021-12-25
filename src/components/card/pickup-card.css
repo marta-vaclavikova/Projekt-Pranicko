@@ -1,0 +1,48 @@
+
+/* ----------------------------------------------- */
+/* formulář pro vyzvednutí přáníčka */
+/* ----------------------------------------------- */
+
+.pickup {
+	margin: 0;
+	text-align: center;
+}
+
+.pickup__label {
+	display: block;
+	font-size: 28px;
+	font-family: var(--font-script) ;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.pickup__code,
+.pickup__url {
+	width: 100%;
+	font-family: var(--font-base);
+	line-height: 1;
+	text-align: center;
+	color: var(--color-gold);
+	background-color: white;
+	border: 0;
+	outline: 0;
+}
+
+.pickup__code {
+	font-size: 80px;
+}
+
+div.pickup__code {
+	padding: 20px;
+}
+
+.pickup__url {
+	display: block;
+	padding: 20px;
+	font-size: 30px;
+}
+
+.pickup__url:hover,
+.pickup__url:focus {
+	color: var(--blue);
+}

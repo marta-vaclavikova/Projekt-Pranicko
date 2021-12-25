@@ -1,29 +1,197 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+/* fonty */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Playfair+Display:wght@500&family=Source+Sans+3:wght@300;400;700&display=swap');
 
-* {
-  box-sizing: border-box;
+
+/* magie a jednorožci */
+html { box-sizing: border-box; }
+*, *::after, *::before { box-sizing: inherit; }
+
+
+:root {
+	--font-base: 'Source Sans 3', sans-serif;
+	--font-title: 'Playfair Display', serif;
+	--font-script: 'Caveat', cursive;
+
+	--color-red: #a1262a;
+	--color-red-active: #791e21;
+
+	--color-blue: #1a202b;
+	--color-blue-active: #2a3d5f;
+
+	--color-gold: #a98343;
+	--color-gold-active: #856734;
+
+	--color-bg1: #dbd6cc;
+	--color-bg2: #c5ae81;
+
+	--red-gradient: radial-gradient(circle farthest-corner, #de0000 0%, #6c0000 100%);
+	--green-gradient: radial-gradient(circle farthest-corner, #61a431 0%, #184617 100%);
+	--blue-gradient: radial-gradient(circle farthest-corner, #0059de 0%, #012064 100%);
+	--gold-gradient: radial-gradient(circle farthest-corner, #fed17d 0%, #bf7b2a 100%);
 }
 
-html {
-  font-family: 'Open Sans', sans-serif;
+
+/* základní nastavení, ať je všechno přes celé okno prohlížeče */
+html,
+body,
+#app {
+	width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
 }
 
-.container {
-  max-width: 26rem;
-  margin-right: auto;
-  margin-left: auto;
+body {
+	font-family: var(--font-base);
+	background-color: var(--color-bg);
+	background:
+		url(img/bg.svg) repeat-x bottom center/1200px 150px,
+		radial-gradient(circle farthest-corner at 50% 0%, var(--color-bg1) 50%, var(--color-bg2) 100%);
 }
 
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 4rem;
+img {
+	display: block;
 }
 
-.logo {
-  width: 10rem;
-  height: 10rem;
-  background-image: url(./img/rocket.svg);
-  background-size: contain;
+h1, h2, h3 {
+	font-family: var(--font-title);
+	font-weight: 500;
+	color: var(--color-red);
 }
+
+
+/* ----------------------------------------------- */
+/* tlacitko */
+/* ----------------------------------------------- */
+
+.button {
+	padding: 10px 20px;
+	font-family: var(--font-title);
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	border: 0;
+	background-color: var(--color-blue);
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: var(--color-blue-active);
+}
+
+.button--big {
+	padding: 15px 30px;
+	font-size: 28px;
+}
+
+.button--gold 			{	background-color: var(--color-gold); }
+.button--gold:hover	{	background-color: var(--color-gold-active); }
+
+.button--blue 			{	background-color: var(--color-blue); }
+.button--blue:hover	{	background-color: var(--color-blue-active); }
+
+.button--red  			{	background-color: var(--color-red); }
+.button--red:hover	{	background-color: var(--color-red-active); }
+
+
+
+/* ----------------------------------------------- */
+/* box */
+/* ----------------------------------------------- */
+.box {
+	padding: 10px;
+	background-color: white;
+}
+
+.box__inside {
+	border: 1px solid var(--color-gold);
+	padding: 30px;
+}
+
+
+/* ----------------------------------------------- */
+/* omezeni sirky obsahu */
+/* ----------------------------------------------- */
+.content {
+	max-width: 540px;
+	margin: 50px auto;
+}
+
+
+/* ----------------------------------------------- */
+/* ozdoby */
+/* ----------------------------------------------- */
+
+/* laurels */
+.laurels::before,
+.laurels::after {
+	content: "";
+	display: inline-block;
+	height: 0.7em;
+	width: 1.4em;
+	transform: translateY(0.1em);
+	background: no-repeat top left/contain;
+}
+
+.laurels::before {
+	background-image: url(img/vetvicka-vlevo.svg);
+	margin-right: 0.1em;
+}
+
+.laurels::after {
+	background-image: url(img/vetvicka-vpravo.svg);
+	margin-left: 0.1em;
+}
+
+/* shadow */
+.shadow {
+	position: relative;
+	box-shadow:1px 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.shadow::before,
+.shadow::after {
+	content: "";
+	display: block;
+	width: 50%;
+	max-width: 300px;
+	position: absolute;
+	bottom: 15px;
+	left: 10px;
+	top: 80%;
+	background-color: rgba(0, 0, 0, 0.3);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.3);
+	transform: rotate(-3deg);
+	z-index: -1;
+}
+
+.shadow::after {
+	left: auto;
+	right: 10px;
+	transform: rotate(3deg);
+}
+
+
+
+/* ----------------------------------------- */
+/* unitility classes
+/* ----------------------------------------- */
+
+.m-0		{ margin: 0; }
+.mt-0		{ margin-top: 0; }
+.mb-0		{ margin-bottom: 0; }
+.mr-0		{ margin-right: 0; }
+.ml-0		{ margin-left: 0; }
+
+.mt-30	{ margin-top: 30px; }
+.mb-30	{ margin-bottom: 30px; }
+
+
+
+.p-0		{ padding: 0; }
+.pt-0		{ padding-top: 0; }
+.pb-0		{ padding-bottom: 0; }
+.pr-0		{ padding-right: 0; }
+.pl-0		{ padding-left: 0; }
+
+

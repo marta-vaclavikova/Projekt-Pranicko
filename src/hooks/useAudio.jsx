@@ -10,7 +10,7 @@ export const useAudio = (url) => {
 
 	useEffect(
 		() => {
-			isPlaying ? audio.play() : audio.pause()
+			isPlaying ? audio.play() : audio.pause();
 		},
 		[isPlaying]
 	);
@@ -20,7 +20,8 @@ export const useAudio = (url) => {
 			audio.addEventListener('ended', pause );
 
 			return () => {
-				audio.removeEventListener('ended', pause)
+				audio.pause();
+				audio.removeEventListener('ended', pause);
 			}
 		},
 		[]

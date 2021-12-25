@@ -1,0 +1,71 @@
+/* ----------------------------------------------- */
+/* tlačítka na úvodní stránce */
+/* ----------------------------------------------- */
+
+.actions {
+	max-width: 540px;
+	margin: 50px auto;
+}
+
+.action {
+	display: block;
+	position: relative;
+	width: 100%;
+	padding: 10px;
+	text-decoration: none;
+	background-color: white;
+	color: var(--color-blue);
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+
+.action:hover {
+	background-color: var(--color-gold);
+}
+
+.action + .action {
+	margin-top: 30px;
+}
+
+.action__inside {
+	display: grid;
+	grid-auto-flow: dense;
+	grid-template-columns: 1fr 1fr;
+	min-height: 180px;
+	text-align: center;
+	color: black;
+	background-color: white;
+	border: 1px solid var(--color-gold);
+}
+
+.action:nth-child(odd) .action__decoration {
+	background: url(img/deco1.svg) no-repeat center center/contain;
+	grid-column: 1;
+}
+.action:nth-child(even) .action__decoration {
+	background: url(img/deco2.svg) no-repeat center center/contain;
+	grid-column: 2;
+}
+
+.action__content {
+	align-self: center;
+	text-align: center;
+}
+
+.action__title {
+	margin: 0 0 20px 0;
+	font-size: 20px;
+	color: var(--color-blue);
+}
+
+.action__title span {
+	display: block;
+	font-size: 30px;
+	font-family: var(--font-script);
+	color: var(--color-gold);
+}
+
+.action__description {
+	max-width: 200px;
+	margin: 0 auto;
+}
