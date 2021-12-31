@@ -112,6 +112,10 @@ export const configuration = {
 			value: 'god-rest',
 			description: 'Pokoj Vám',
 		},
+		{
+			value: 'tri-kralove',
+			description: 'Tři králové',
+		},
 	],
 
 }

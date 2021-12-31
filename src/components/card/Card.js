@@ -79,10 +79,10 @@ const CardBody = ({ data }) => {
                 </div>
 
                 <div className="inside-right">
-                    <div className="photo photo1"><img src="/assets/photos/photo1.jpg" /></div>
-                    <div className="photo photo2"><img src="/assets/photos/photo2.jpg" /></div>
-                    <div className="photo photo3"><img src="/assets/photos/photo3.jpg" /></div>
-                    <div className="photo photo4"><img src="/assets/photos/photo4.jpg" /></div>
+                    <div className="photo photo1"><img src="/assets/photos/photo5.jpg" /></div>
+                    <div className="photo photo2"><img src="/assets/photos/photo6.jpg" /></div>
+                    <div className="photo photo3"><img src="/assets/photos/photo7.jpg" /></div>
+                    <div className="photo photo4"><img src="/assets/photos/photo8.jpg" /></div>
                 </div>
 
             </div>
